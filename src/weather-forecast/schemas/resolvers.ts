@@ -1,4 +1,4 @@
-import {WeatherAPI} from 'weather-forecast/resources/weather-api'
+import {WeatherAPI} from '../../weather-forecast/resources/weather-api'
 
 export const resolvers = {
   Query: {
