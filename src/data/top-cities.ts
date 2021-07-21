@@ -1,4 +1,4 @@
-[
+export const topCities = [
   {
     "Version": 1,
     "Key": "28143",

@@ -1,6 +1,6 @@
 import * as axios from 'axios'
 
-export const get = async (url: string) => {
+const get = async (url: string) => {
   try {
     const res = await axios.default.get(url)
     return res.data
@@ -8,4 +8,8 @@ export const get = async (url: string) => {
     console.error(error)
     throw error
   }
+}
+
+export const API = {
+  get,
 }
