@@ -6,7 +6,7 @@ Starter for express project in typescript with some personal preferences
 
 ## How to access it
 
-https://swvsq99aj6.execute-api.us-east-1.amazonaws.com/dev
+https://5b463fnr15.execute-api.eu-west-1.amazonaws.com/dev/graphql
 
 ## Some notes
 

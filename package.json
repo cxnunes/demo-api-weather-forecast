@@ -2,12 +2,12 @@
   "name": "demo-weather-forecast",
   "version": "0.0.1",
   "description": "graphql api for weather forecast",
-  "main": "dist/index.js",
+  "main": "dist/weather-forecast/server/index.js",
   "author": "cxnunes",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "sh -ac '. .env.local; nodemon ./src/index.ts'",
+    "dev": "sh -ac '. .env.local; nodemon ./src/weather-forecast/server/express.ts'",
     "dev:lambda": "yarn sls offline start",
     "test": "jest --forceExit --detectOpenHandles  --silent",
     "test:watch": "sh -ac '. .env.test; yarn test --watch'",
@@ -20,7 +20,6 @@
     "apollo-server-core": "^3.0.2",
     "apollo-server-lambda": "^3.0.2",
     "axios": "^0.21.1",
-    "fork-ts-checker-webpack-plugin": "^6.2.12",
     "graphql": "^15.5.1",
     "ts-loader": "^9.2.3"
   },

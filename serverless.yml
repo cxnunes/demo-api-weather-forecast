@@ -5,17 +5,15 @@ provider:
   name: aws
   profile: cxnunesio
   runtime: nodejs14.x
+  region: eu-west-1
+  
 functions:
   graphql:
-    handler: src/weather-forecast/server.graphqlHandler
+    handler: src/weather-forecast/server/lambda.handler
     events:
     - http:
-        path: /
+        path: /graphql
         method: post
-        cors: true
-    - http:
-        path: /
-        method: get
         cors: true
 
 custom:

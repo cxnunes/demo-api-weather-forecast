@@ -1,18 +1,7 @@
-import {ApolloServer, gql} from 'apollo-server-lambda'
+import {ApolloServer} from 'apollo-server-lambda'
 import {ApolloServerPluginLandingPageGraphQLPlayground} from 'apollo-server-core'
-// Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-  Query: {
-    hello: () => 'Hello world!',
-  },
-}
+import {resolvers} from '../models/resolvers'
+import {typeDefs} from '../models/typeDefs'
 
 const server = new ApolloServer({
   typeDefs,
@@ -28,4 +17,4 @@ const server = new ApolloServer({
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 })
 
-export const graphqlHandler = server.createHandler()
+export const handler = server.createHandler()
