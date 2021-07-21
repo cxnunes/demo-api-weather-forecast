@@ -4,7 +4,10 @@
 
 Starter for express project in typescript with some personal preferences
 
+## How to access it
+
+https://swvsq99aj6.execute-api.us-east-1.amazonaws.com/dev
+
 ## Some notes
 
-Using ts-paths for nodemon
-https://stackoverflow.com/questions/58187115/typescript-paths-not-working-in-an-express-project
+- serveless offline not working properly

@@ -1,6 +1,14 @@
 {
-  "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "target": "es2017",
     "baseUrl": "./src",
     "outDir": "dist",
     "rootDir": "src/",

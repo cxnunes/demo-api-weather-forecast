@@ -1,0 +1,33 @@
+# serverless.yml
+
+service: weather-forecast-lambda
+provider:
+  name: aws
+  profile: cxnunesio
+  runtime: nodejs14.x
+functions:
+  graphql:
+    handler: src/weather-forecast/server.graphqlHandler
+    events:
+    - http:
+        path: /
+        method: post
+        cors: true
+    - http:
+        path: /
+        method: get
+        cors: true
+
+custom:
+  serverless-offline:
+    port: 4000
+
+  webpack:
+    includeModules:
+      forceExclude:
+        - aws-sdk
+    packager: yarn
+
+plugins:
+  - serverless-webpack
+  - serverless-offline

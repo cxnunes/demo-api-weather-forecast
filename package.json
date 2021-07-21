@@ -8,10 +8,21 @@
   "private": false,
   "scripts": {
     "dev": "sh -ac '. .env.local; nodemon ./src/index.ts'",
+    "dev:lambda": "yarn sls offline start",
     "test": "jest --forceExit --detectOpenHandles  --silent",
     "test:watch": "sh -ac '. .env.test; yarn test --watch'",
     "build": "rm -rf ./dist/* && tsc",
-    "postbuild": "ef-tspm"
+    "postbuild": "ef-tspm",
+    "deploy": "yarn sls deploy"
+  },
+  "dependencies": {
+    "apollo-server": "^3.0.2",
+    "apollo-server-core": "^3.0.2",
+    "apollo-server-lambda": "^3.0.2",
+    "axios": "^0.21.1",
+    "fork-ts-checker-webpack-plugin": "^6.2.12",
+    "graphql": "^15.5.1",
+    "ts-loader": "^9.2.3"
   },
   "devDependencies": {
     "@ef-carbon/tspm": "^2.2.5",
@@ -21,21 +32,26 @@
     "@types/node": "^15.0.2",
     "@typescript-eslint/eslint-plugin": "^4.23.0",
     "@typescript-eslint/parser": "^4.23.0",
-    "eslint": "^7.26.0",
+    "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.3.6",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.7",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-promise": "^5.1.0",
     "jest": "^27.0.4",
     "nodemon": "^2.0.7",
     "prettier": "^2.3.0",
+    "serverless": "^2.52.0",
+    "serverless-offline": "^7.0.0",
+    "serverless-webpack": "^5.5.1",
     "ts-jest": "^27.0.3",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "webpack": "^5.45.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "volta": {
     "node": "12.22.1",
