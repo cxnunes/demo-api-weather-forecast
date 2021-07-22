@@ -1,18 +1,16 @@
 import {ApolloServer} from 'apollo-server-lambda'
 import {ApolloServerPluginLandingPageGraphQLPlayground} from 'apollo-server-core'
-import {resolvers} from '../schemas/resolvers'
-import {typeDefs} from '../schemas/typeDefs'
+import {typeDefs, resolvers} from '../schemas/forecast.schema'
+import {CitiesAPI} from '../../resources/cities/cities-api'
+import {ForecastAPI} from '../../resources/forecast/forecast-api'
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({event, context, express}) => ({
-    headers: event.headers,
-    functionName: context.functionName,
-    event,
-    context,
-    expressRequest: express.req,
-  }),
+  context: {
+    forecastApi: ForecastAPI,
+    citiesApi: CitiesAPI,
+  },
   introspection: true,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 })

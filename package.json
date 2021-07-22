@@ -10,7 +10,7 @@
     "dev": "sh -ac '. .env.local; nodemon ./src/weather-forecast/server/express.ts'",
     "dev:lambda": "yarn sls offline start",
     "test": "jest --forceExit --detectOpenHandles  --silent",
-    "test:watch": "sh -ac '. .env.local; yarn test --watch'",
+    "test:watch": "yarn test --watch",
     "build": "rm -rf ./dist/* && tsc",
     "postbuild": "ef-tspm",
     "deploy": "yarn sls deploy"
